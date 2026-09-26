@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Bad Time Simulator</title>
+    <!-- Carrega o jQuery presente na pasta -->
+    <script src="jquery-3.4.1.min.js"></script>
+<style>
+    body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    #c2canvasdiv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* As dimensões padrão do jogo original */
+        width: 640px;
+        height: 480px;
+    }
+</style>
+</head>
+<body>
+    <div id="c2canvasdiv">
+        <!-- O Construct 2 usa esse ID específico para injetar o jogo -->
+        <canvas id="c2canvas" width="640" height="480">
+            Seu navegador não suporta HTML5 canvas.
+        </canvas>
+    </div>
+
+    <!-- Carrega a engine do jogo -->
+    <script src="c2runtime.js"></script>
+
+    <!-- Inicializa o runtime no canvas -->
+    <script>
+        jQuery(document).ready(function () {
+            cr_createRuntime("c2canvas");
+        });
+    </script>
+</body>
+
+   
+
+</html>
